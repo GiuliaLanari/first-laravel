@@ -18,7 +18,7 @@
                         <label for="deadline">Scadenza</label>
                         <input type="date" class="form-control" id="deadline">
                     </div>
-                    <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+                    <button type="submit" class="btn btn-primary mt-3">Salva Modifiche</button>
                 </form>
             </div>
         </div>
