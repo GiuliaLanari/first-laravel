@@ -14,12 +14,16 @@
                 <input type="text" class="form-control" id="title" placeholder="Inserisci il titolo dell'attività">
             </div>
             <div class="form-group">
-                <label for="description">Descrizione</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Inserisci la descrizione dell'attività"></textarea>
+                <label for="price">Prezzo</label>
+                <input type="text" class="form-control" id="price" placeholder="Prezzo"></input>
             </div>
             <div class="form-group">
-                <label for="deadline">Scadenza</label>
-                <input type="date" class="form-control" id="deadline">
+                <label for="organizzatore">Organizzatore</label>
+                <input type="text" class="form-control" id="organizzatore" placeholder="Nome organizzatore"></input>
+            </div>
+            <div class="form-group">
+                <label for="img">Immagine</label>
+                <input type="text" class="form-control" id="img" placeholder="Indirizzo dell'immagine"></input>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Aggiungi Attività</button>
         </form>
