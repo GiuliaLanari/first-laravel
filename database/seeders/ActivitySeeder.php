@@ -13,8 +13,8 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-      for($i=0 ; $i < 100; $i++){
-        DB::table("activity")->insert([
+      for($i=0 ; $i < 15; $i++){
+        DB::table("activities")->insert([
             "title"=> fake()->words(rand(3,10), true),
             "price"=>rand(15,100),
             "productor"=>fake()->name(),

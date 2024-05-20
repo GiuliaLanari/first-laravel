@@ -2,33 +2,84 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
-    public function elenco(){
-      
-        // Esempio di dati delle attività
-        $activities = [
-            ["id" => 1, "title" => "Attività 1", "price" => "10 $", "productor" => "Artuu", "img" => "https://images.pexels.com/photos/1472887/pexels-photo-1472887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
-            ["id" => 2, "title" => "Attività 2", "price" => "120 $", "productor" => "Jhon", "img" => "https://images.pexels.com/photos/547116/pexels-photo-547116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"],
-            ["id" => 3, "title" => "Attività 3", "price" => "303 $", "productor" => "Mett", "img" => "https://images.pexels.com/photos/1543756/pexels-photo-1543756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"]
-        ];
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $activities = Activity::all();
         
-        return view('activity.elenco',
+        return view('activities.index',
         ["activities"=>$activities]
     );
     }
 
-    public function ellimina($id){
-        return view('activity.ellimina', ['id'=>$id]);
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('activities.create');
     }
 
-    public function modifica($id){
-        return view('activity.modifica', ['id'=>$id]);
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $date= $request->all();
+
+        $newActivity= new Activity();
+        $newActivity->title=$date["title"];
+        $newActivity->price=$date["price"];
+        $newActivity->productor=$date["productor"];
+        $newActivity->img=$date["img"];
+        $newActivity->save();
+
+        
+        return  redirect()->route("activities.index");
     }
-    
-    public function nuovo(){
-        return view('activity.nuovo');
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Activity $activity)
+    {
+
+        return view('activities.show', ['activity'=>$activity]);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Activity $activity)
+    {
+        return view('activities.edit', ['activity'=>$activity]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Activity $activity)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Activity $activity)
+    {
+        $activity= Activity::findOrFail($activity);
+        $activity->delete();
+
+        return  redirect()->route("activities.index");
+
+        // return view('activities.destroy', ['activity'=>$activity]);
     }
 }

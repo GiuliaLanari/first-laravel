@@ -17,7 +17,15 @@
        <div class="card-body">
        <h5 class="card-title">Titolo della Card</h5>
        <p class="card-text">Testo della card. Qui puoi inserire la descrizione del contenuto della card.</p>
-       <a href="#" class="btn btn-primary">Vai alla pagina</a>
+       
+
+       <form action="{{route ('activities.destroy', ['activity'=>$activity])}}" method="POST">
+        @method('DELETE')
+        @csrf
+
+        <button class="btn btn-danger">Delete</button>
+      
+      </form>
        </div>
       </div>
   </div>

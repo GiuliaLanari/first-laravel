@@ -21,7 +21,18 @@
               <h5 class="card-title">{{$activity["title"]}}</h5>
               <p class="card-text">{{$activity["price"]}}</p>
               <p class="card-text"><small class="text-muted">Organizzatore: {{$activity["productor"] }}</small></p>
+
+              <a href="{{route ('activities.show', ['activity'=>$activity] )}}" class="btn btn-primary">Dettails</a>
              </div>
+
+             <form action="{{route ('activities.destroy', ['activity'=>$activity])}}" method="POST">
+                @method('DELETE')
+                @csrf
+        
+                <button class="btn btn-danger">Delete</button>
+              
+              </form>
+             
             </div>
         </div>
     
