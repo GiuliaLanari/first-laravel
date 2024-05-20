@@ -20,8 +20,8 @@
                 <input type="text" class="form-control" id="price" placeholder="Prezzo" name="price"></input>
             </div>
             <div class="form-group">
-                <label for="productor">Productor</label>
-                <input type="text" class="form-control" id="productor" placeholder="Name productor" name="productor"></input>
+                <label for="productor">Organizer</label>
+                <input type="text" class="form-control" id="productor" placeholder="Name organizer" name="productor"></input>
             </div>
             <div class="form-group">
                 <label for="img">Image</label>

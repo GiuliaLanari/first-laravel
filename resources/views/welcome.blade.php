@@ -5,43 +5,45 @@
 
   
 @section("content")
-<h1 class="my-5 text-center">Benvenuti sul nostro sito!</h1>
+<h1 class="my-5 text-center">Welcome to our website!</h1>
 <div class="row justify-content-center">
   <div class="col-10 mx-auto mb-5">
 
      <div class="card">
   
        <div class="card-body">
-        <h5 class="card-title">Chi siamo?</h5>
-        <p class="card-text">Benvenuti su Activity, il punto di riferimento per chi ama l'avventura e la natura! Siamo un team di appassionati di outdoor e esploratori dedicati a creare esperienze uniche e memorabili. Da anni organizziamo attività ed escursioni per tutti coloro che desiderano scoprire i tesori nascosti della nostra splendida terra.</p>
-        <h5 class="card-title">La Nostra Missione</h5>
-        <p class="card-text">La nostra missione è quella di avvicinare le persone alla natura, offrendo una vasta gamma di attività all'aperto che spaziano dalle escursioni in montagna alle avventure in kayak, dalle passeggiate culturali alle uscite in bicicletta. Crediamo che l'esplorazione e il contatto con l'ambiente naturale siano fondamentali per il benessere fisico e mentale.</p>
-        <h5 class="card-title">Il Nostro Team</h5>
-        <p class="card-text">Il nostro team è composto da guide esperte, istruttori qualificati e operatori del turismo che condividono la passione per la natura e l'avventura. Ogni membro del nostro staff è altamente preparato per garantire sicurezza, professionalità e divertimento in ogni attività proposta. Siamo qui per accompagnarti in ogni passo del tuo viaggio, offrendoti supporto e consigli personalizzati.</p>
-        <h5 class="card-title">Le Nostre Attività</h5>
-        <p class="card-text">Offriamo una vasta gamma di attività pensate per tutte le età e livelli di esperienza. Che tu sia un principiante o un esperto escursionista, troverai l'avventura perfetta per te. Alcune delle nostre attività includono:
+        <h5 class="card-title">Who we are?</h5>
+        <p class="card-text">Welcome to Activity, the reference point for those who love adventure and nature! We are a team of outdoor enthusiasts and explorers dedicated to creating unique and memorable experiences. For years we have been organizing activities and excursions for all those who wish to discover the hidden treasures of our beautiful land.</p>
+
+        <h5 class="card-title">Our mission</h5>
+        <p class="card-text">Our mission is to bring people closer to nature, offering a wide range of outdoor activities ranging from hiking in the mountains to kayaking adventures, cultural walks to cycling. We believe that exploration and contact with the natural environment are fundamental to physical and mental well-being.</p>
+      
+        <h5 class="card-title">Our activities</h5>
+        <p class="card-text">We offer a wide range of activities designed for all ages and levels of experience. Whether you are a beginner or an experienced hiker, you will find the perfect adventure for you. Some of our activities include:
           <ul>
-            <li><strong>Escursioni guidate:</strong> Esplora sentieri mozzafiato e scopri panorami incantevoli accompagnato da guide esperte.</li>
-            <li><strong>Attività acquatiche:</strong> Avventure in kayak, rafting e snorkeling per scoprire il mondo acquatico.</li>
-            <li><strong>Tour culturali:</strong> Passeggiate alla scoperta della storia, della cultura e delle tradizioni locali.</li>
-            <li><strong>Avventure in bicicletta:</strong> Percorsi ciclabili per tutti i livelli, dal principiante al ciclista esperto.</li>
+            <li><strong>Guided Excursions:</strong> Explore breathtaking trails and discover enchanting views accompanied by expert guides.</li>
+            <li><strong>Water activities:</strong> Kayaking, rafting and snorkeling adventures to discover the aquatic world.</li>
+            <li><strong>Cultural tours:</strong> Walks to discover the history, culture and local traditions.</li>
+            <li><strong>Adventures by bike:</strong> Cycle paths for all levels, from beginner to experienced cyclist.</li>
           </ul>
         </p>
         <div class="col-12">
           <div class="row">
-            <div class="col-12 col-md-4 overflow-hidden ">
+            <div class="col-12 col-md-4 overflow-hidden">
               <img src="https://images.pexels.com/photos/2158963/pexels-photo-2158963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nature">
             </div>
-            <div class="col-12 col-md-4 overflow-hidden">
+
+            <div class="col-12 col-md-4 overflow-hidden ">
               <img src="https://images.pexels.com/photos/132429/pexels-photo-132429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nature">
             </div>
+            
             <div class="col-12 col-md-4 overflow-hidden">
               <img src="https://images.pexels.com/photos/532803/pexels-photo-532803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="nature">
             </div>
-          </div>
-          
-          
+            
+          </div> 
         </div>
+
        </div>
     </div>
   </div>

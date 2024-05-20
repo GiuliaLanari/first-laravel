@@ -9,14 +9,15 @@
 
 
 <div class="row justify-content-center">
-  <h1 class="my-5 text-center">Pagina di dettaglio</h1>
+  <h1 class="mb-5 text-center">{{$activity["title"]}}</h1>
 
-  <div class="col-md-9">
+  <div class="col-md-5">
       <div class="card">
-       <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+       <img src="{{$activity["img"]}}" class="card-img-top" alt="activity">
        <div class="card-body">
-       <h5 class="card-title">Titolo della Card</h5>
-       <p class="card-text">Testo della card. Qui puoi inserire la descrizione del contenuto della card.</p>
+       
+       <p class="card-text">Price: £ {{$activity["price"]}} </p>
+       <p class="card-text"><small class="text-muted">Organizzatore: {{$activity["productor"] }}</small></p>
        
 
        <form action="{{route ('activities.destroy', ['activity'=>$activity])}}" method="POST">
