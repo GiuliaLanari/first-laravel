@@ -12,7 +12,8 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        $activities = Activity::all();
+        // $activities = Activity::all(); // me li mostra tutti
+        $activities = Activity::paginate(6);
         
         return view('activities.index',
         ["activities"=>$activities]
@@ -75,11 +76,9 @@ class ActivityController extends Controller
      */
     public function destroy(Activity $activity)
     {
-        $activity= Activity::findOrFail($activity);
+       
         $activity->delete();
 
         return  redirect()->route("activities.index");
-
-        // return view('activities.destroy', ['activity'=>$activity]);
     }
 }
