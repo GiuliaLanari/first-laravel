@@ -49,10 +49,11 @@ class ActivityController extends Controller
         $newActivity->price=$date["price"];
         $newActivity->productor=$date["productor"];
         $newActivity->img=$date["img"];
+        $newActivity->user_id=$request->user()->id;
         $newActivity->save();
 
         
-        return  redirect()->route("activities.index");
+        return  redirect()->route("activities.index")->with('create_successer', $newActivity);
     }
 
     /**
@@ -67,8 +68,9 @@ class ActivityController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Activity $activity)
+    public function edit(Request $request, Activity $activity)
     {
+        if($request->user()->id !== $activity->user_id) abort(401);
         return view('activities.edit', ['activity'=>$activity]);
     }
 
@@ -94,6 +96,8 @@ class ActivityController extends Controller
         'img' => 'nullable|string|max:255',
     ]);
 
+    if($request->user()->id !== $activity->user_id) abort(401);
+
     // Aggiornamento dell'istanza esistente di Activity
     $activity->title = $validatedData['title'];
     $activity->price = $validatedData['price'];
@@ -102,17 +106,18 @@ class ActivityController extends Controller
     $activity->save();
 
         
-        return  redirect()->route("activities.show", ['activity'=> $activity]);
+        return  redirect()->route("activities.show", ['activity'=> $activity])->with('update_successer', $activity);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Activity $activity)
+    public function destroy(Request $request, Activity $activity)
     {
        
+        if($request->user()->id !== $activity->user_id) abort(401);
         $activity->delete();
 
-        return  redirect()->route("activities.index");
+        return  redirect()->route("activities.index")->with('delete_successer', $activity);
     }
 }

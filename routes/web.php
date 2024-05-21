@@ -1,15 +1,36 @@
 <?php
 
-use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\PagesController;
-use Database\Seeders\ActivitySeeder;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [PagesController::class, "welcome"] )->name("welcome");
-// Route::get('/activity', [ActivityController::class, "elenco"] )->name("activity.elenco");
-// Route::get('/activity/add', [ActivityController::class, "create"] )->name("activity.create");
-// Route::get('/activity/{id}', [ActivitySeeder::class, "show"] )->name("activity.show");
-// Route::get('/activity/{id}/edit', [ActivityController::class, "edit"] )->name("activity.edit");
-// Route::get('/activity/{id}/delite', [ActivityController::class, "destroy"] )->name("activity.destroy");
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\PagesController;
 
-Route::resource("activities", ActivityController::class);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [PagesController::class, "welcome"] )->name("welcome");
+
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource("activities", ActivityController::class)->except(["index", "show"]);
+   
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
+
+Route::resource("activities", ActivityController::class)->only(["index", "show"]);

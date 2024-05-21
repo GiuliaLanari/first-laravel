@@ -14,12 +14,13 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
-      for($i=0 ; $i < 20; $i++){
-        Activity::table("activities")->insert([
+      for($i=0 ; $i < 30; $i++){
+        Activity::create([
             "title"=> fake()->words(rand(3,10), true),
             "price"=>rand(15,100),
             "productor"=>fake()->name(),
-            "img"=>fake()->imageUrl(640, 480)
+            "img"=>fake()->imageUrl(640, 480),
+            "user_id"=>rand(1, 10),
 
 
 
